@@ -25,7 +25,7 @@
 
 ## Project Description
 
-As part of the Data Analysis Boot camp, we are requested to work as a team to access data using: APIs, Web Scraping or direct download methods (CSV files). We have selected to access the data of the World Happiness Report via direct download (https://www.kaggle.com/unsdsn/world-happiness) and to access historical weather data from https://dev.meteostat.net/ via the API. As of obstacles encountered, a direct CSV download from https://www.ncdc.noaa.gov/cdo-web/datasets was later used. Then we have organized and "cleaned" this data according to our needs to try to understand if there's a correlation between the happiness ranking and weather conditions of selected countries. The project focuses more on the process of error facing and problem solving rather than arriving at conclusions.
+As part of the Data Analysis Bootcamp, we are requested to work as a team to access data using: APIs, Web Scraping or direct download methods (CSV files). We have selected to access the data of the World Happiness Report via direct download (https://www.kaggle.com/unsdsn/world-happiness) and to access historical weather data from https://dev.meteostat.net/ via the API. As of obstacles encountered, a direct CSV download from https://www.ncdc.noaa.gov/cdo-web/datasets was later used. Then we have organized and "cleaned" this data according to our needs to try to understand if there's a correlation between the happiness ranking and weather conditions of selected countries. The project focuses more on the process of error facing and problem solving rather than arriving at conclusions.
 
 ## Questions & Hypotheses
 
@@ -48,6 +48,8 @@ Hypothesis is as follows:
 - Further clean the data
 - Going through the API documents and understanding the requirements to request data
 - Access the API with an API key to request specific weather data
+- Access Historical Weather Data from 'CSV' direct download
+- Structure, clean and evaluate relevant Historical Weather Data in DF
 - Add weather information to the table
 - Analyse the effect of the weather (sunshine, wind, temperature) to the happiness ranking
 
@@ -94,7 +96,7 @@ Description of Data set 'Finding Stations' part of the API:
 
  if status of weather station = active:
  -Country: Latitude
- -Country: Long
+ -Country: Longitude
  
   Description of Data set for 'Daily Data' part of the API: 
 
@@ -117,6 +119,8 @@ Description of Data set 'Finding Stations' part of the API:
 https://www.ncdc.noaa.gov/cdo-web/datasets: 
 
  Description of Data set: CSV direct download
+ 
+ These are tables with the following shape: 'Top_3_2015.csv' = 17 rows x 11 columns, 'Top_3_2016.csv' = 18 rows × 11 columns, 'Top_3_2017.csv' = 296 rows × 11 columns, 'Top_3_2018.csv' = 475 rows × 11 columns and 'Top_3_2019.csv' = 469 rows × 11 columns.
 
  The data obtained for the top 3 countries of the World Happiness Report on 2015, 2016, 2017, 2018 and 2019 was structured as follows:
 
@@ -142,9 +146,9 @@ The following is a general overview of the structure:
     Project Management and organization:  Malon Kraaijvanger
     Presentation: Malon Kraaijvanger [28.08.20]
     World Happiness Report Data Cleaning: Hannah Reber [26.08.20-28.08.20]
-    API Request Meteostat: Malon Kraaijvanger[26.08.20-27.08.30] + Charlotte Velilla[27.08.20]
-    NCDC Data Cleaning: Charlotte Velilla[28.08.20]
-    ReadMe: Charlotte Velilla and Malon Kraaijvanger[26.08.20, 29.08.20]
+    API Request Meteostat: Malon Kraaijvanger [26.08.20-27.08.30] + Charlotte Velilla [27.08.20]
+    NCDC Data Cleaning: Charlotte Velilla [28.08.20]
+    ReadMe: Charlotte Velilla and Malon Kraaijvanger [26.08.20, 29.08.20]
     
 
 ## Organization
@@ -163,7 +167,7 @@ The data obtained from the World Happiness Report was *cleaned*, filtered and pr
 
 #### 28.08.20
 
-Further changes and final edits were made to the dataframes of the World Happiness Report. The list of countries was updated, changes were made accordingly and had another look at the API to get historical weather information. A last minute turning point decision was made, the previous API extraction process was abandoned and documentation was extensively elaborated as for the process leading to it. In order to retrieve final weather information, CSV files were downloaded for the years 2015-2019 from another available source: https://www.ncdc.noaa.gov/cdo-web/datasets. This data was cleaned and partially prepared for further use and for the presentation on 28.09.20.  
+Further changes and final edits were made to the dataframes of the World Happiness Report. The list of countries was updated, changes were made accordingly and had another look at the API to get historical weather information. A last minute turning point decision was made, the previous API extraction process was abandoned and documentation was extensively elaborated as for the process leading to it. In order to retrieve final weather information, CSV files were downloaded for the years 2015-2019 from another available source: https://www.ncdc.noaa.gov/cdo-web/datasets. This data was cleaned and partially prepared for further use and for the presentation on 28.08.20.  
 
 
 ## Links
@@ -182,4 +186,7 @@ https://github.com/porimol/countryinfo (capital converter)
 The repository consists of the following files:
 
 - main_happiness.ipynb: Data cleaning process of the World Happiness Report
+- happiness_2015-2019: WHR files for analysis
 - world_happiness_API_documented: Process of retrieving data through the API
+- main_weather.ipynb: Data Cleaning process of historical Weather Data of NCDC
+- Top_3_2015-2019: Top 3 countries from the WHR for weather analysis

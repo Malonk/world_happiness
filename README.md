@@ -187,6 +187,8 @@ The repository consists of the following files:
 
 - main_happiness.ipynb: Data cleaning process of the World Happiness Report
 - happiness_2015-2019: WHR files for analysis
+- capitalsofcountries.csv: File with countries and the corresponding capitals
+- happyclean.csv: Cleaned WHR file
 - world_happiness_API_documented: Process of retrieving data through the API
 - main_weather.ipynb: Data Cleaning process of historical Weather Data of NCDC
 - Top_3_2015-2019: Top 3 countries from the WHR for weather analysis
